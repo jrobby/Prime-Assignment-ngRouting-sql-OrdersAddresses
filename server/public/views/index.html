@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="routeApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/stylesheet.css" rel="stylesheet">
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <base href="/">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Infinite possibilities!</h2>
+        <p>By 'infinite', we mean 'two'. You can either retrieve a selected user's addresses or retrieve a selected user's orders.</p>
+        <p>You're adventure begins now</p>
+
+    <ul class="nav nav-pills">
+        <li ><a data-toggle="pill" href="#home">Home</a></li>
+        <li> <a data-toggle="pill" href="#/address" class="btn btn-address btn-lg">Addresses</button></a></li>
+        <li> <a data-toggle="pill" href="#/order" class="btn btn-order btn-lg">Orders</button></a></li>
+    </ul>
+<br>
+        <br/>
+
+        <ng-view>
+You are home.
+        </ng-view>
+
+
+</body>
+</html>

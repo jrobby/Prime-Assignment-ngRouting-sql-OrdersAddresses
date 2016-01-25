@@ -1,0 +1,54 @@
+
+<form name="myForm">
+    <label for="selected"> Select user: </label>
+    <select name="selected" id="selected" ng-model="data.selected">
+        <option ng-repeat="option in data.options" value="{{option.id}}">
+            {{option.name}}
+        </option>
+    </select>
+
+    <label for="start">Start: </label>
+    <input type="date" id="start" name="start" ng-model="start">
+
+    <label for="end">End: </label>
+    <input type="date" id="end" name="end" ng-model="end">
+
+
+</form>
+<hr>
+
+
+<button ng-click="getUserOrders(data.selected, start, end)">Get User Orders</button>
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Order ID</th>
+            <th>Amount</th>
+            <th>Order Date</th>
+
+        </tr>
+        </thead>
+        <tbody ng-repeat="item in orders">
+        <tr>
+            <td>{{item.user_id}}</td>
+            <td>{{item.order_id}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.order_date}}</td>
+
+        </tr>
+
+
+        </tbody>
+        <br>
+
+    </table>
+
+    <p>Total amount: {{orderTotal}}</p>
+</div>
+
+
+

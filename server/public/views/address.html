@@ -1,0 +1,43 @@
+
+<form name="myForm">
+    <label for="selected"> Select user: </label>
+    <select name="selected" id="selected" ng-model="data.selected">
+        <option ng-repeat="option in data.options" value="{{option.id}}">
+            {{option.name}}
+        </option>
+    </select>
+</form>
+<hr>
+
+<button ng-click="getUserAddresses(data.selected)">Get User Addresses</button>
+
+
+<div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                </tr>
+            </thead>
+        <tbody ng-repeat="item in addresses">
+            <tr>
+                <td>{{item.address_type}}</td>
+                <td>{{item.address_street}}</td>
+                <td>{{item.address_city}}</td>
+                <td>{{item.address_state}}</td>
+                <td>{{item.address_zip}}</td>
+            </tr>
+        </tbody>
+            <br>
+
+        </table>
+</div>
+
+
+
+
+
