@@ -79,8 +79,11 @@ app.controller('orderController', ['$scope','$http', function($scope, $http){
             $scope.orderTotal = 0;
             for (var i = 0; i < $scope.orders.length; i++){
                 $scope.orderTotal += parseFloat($scope.orders[i].amount);
+                $scope.orders[i].order_date =  $scope.orders[i].order_date.slice(0,10);
                 console.log('current total: ', $scope.orderTotal);
+                console.log('order_date', $scope.orders[i].order_date);
             }
+
             console.log('total amount', $scope.orderTotal);
 
 

@@ -58,9 +58,10 @@ router.get('/:id/:start/:end', function(req, res) {
     var dateEnd = req.params.end;
     var id = req.params.id;
 
-    dateStart= new Date (dateStart).toISOString();
-    dateEnd = new Date (dateEnd).toISOString();
-
+    dateStart= new Date (dateStart).toISOString().slice(0,10);
+    console.log('dateStart', dateStart);
+    dateEnd = new Date (dateEnd).toISOString().slice(0,10);
+    console.log('dateEnd', dateEnd);
     // Get a Postgres client from the connection pool
     pg.connect(connectionString, function(err, client, done) {
         // Handle Errors
@@ -87,7 +88,6 @@ router.get('/:id/:start/:end', function(req, res) {
     });
 
 });
-
 
 
 module.exports = router;
